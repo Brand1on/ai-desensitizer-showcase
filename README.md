@@ -6,27 +6,33 @@
 
 > 这是由 [Brand1on](https://github.com/Brand1on) 维护的官方产品仓库。源代码不公开，Windows 便携版通过 [Releases](https://github.com/Brand1on/ai-desensitizer-showcase/releases) 发布。
 
-## 功能演示
+## v1.1.0 界面
 
-![使用虚构数据展示脱敏前后对照](./assets/feature-demo-fictional.png)
+以下截图全部由隔离测试环境重新生成。演示文件名、保存路径、包编号、恢复密钥和任务记录均为虚构内容，不含用户文件或真实业务数据。
 
-截图由程序处理专用文件 `公开演示_全部虚构.xlsx` 后生成。文件内容全部为虚构示例，不含用户文件、真实任务记录或业务数据。
+### 选择任务类型
 
-### 结果复核
+![v1.1.0 的脱敏、加密传输和解密还原入口](./assets/task-types-v1.1.0-fictional.png)
 
-![使用虚构 CSV 展示原文件与脱敏结果对照](./assets/result-review-fictional.png)
+新建任务时，可以直接选择脱敏处理、仅加密传输或解密还原。
 
-### 可选 AI 复核
+### 仅加密传输
 
-![使用虚构数据展示 AI 复核抽屉](./assets/ai-review-fictional.png)
+![使用虚构空白任务展示仅加密传输入口](./assets/encrypt-upload-v1.1.0-fictional.png)
 
-AI 复核需要用户主动配置并确认。界面会说明发送范围、预计用量和当前状态。
+原文件不会被脱敏。工具会生成需要恢复密钥才能打开的加密包。
 
-### 加密传输
+### 历史加密任务
 
-![v1.1.0 的脱敏、加密传输和解密还原入口](./assets/secure-transfer-v1.1.0.png)
+![使用虚构任务展示历史加密任务详情](./assets/encrypt-history-v1.1.0-fictional.png)
 
-`v1.1.0` 增加仅加密传输和解密还原。发送方可以生成加密包，再通过其他渠道单独提供恢复密钥。
+加密包的内部副本和恢复密钥由工具加密保存，迁移整个工具目录后仍可重新导出。
+
+### 查看恢复密钥
+
+![使用虚构文件名和演示密钥展示恢复密钥弹窗](./assets/recovery-key-v1.1.0-fictional.png)
+
+图中的文件、路径和密钥只用于界面演示，不能解锁任何用户文件或正式发布包。实际使用时，恢复密钥应通过另一个渠道单独发送。
 
 ## 它解决什么问题
 
