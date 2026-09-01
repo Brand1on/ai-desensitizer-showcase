@@ -6,7 +6,7 @@
 
 > 这是由 [Brand1on](https://github.com/Brand1on) 维护的官方产品仓库。源代码不公开，Windows 便携版通过 [Releases](https://github.com/Brand1on/ai-desensitizer-showcase/releases) 发布。
 
-## v1.1.0 界面
+## v1.1.5 界面
 
 以下截图全部由隔离测试环境重新生成。演示文件名、保存路径、包编号、恢复密钥和任务记录均为虚构内容，不含用户文件或真实业务数据。
 
@@ -54,16 +54,16 @@
 
 ## 下载
 
-当前版本：**v1.1.0**，支持 Windows 10/11 x64。
+当前版本：**v1.1.5**，支持 Windows 10/11 x64。
 
-[下载 v1.1.0 Windows 便携版](https://github.com/Brand1on/ai-desensitizer-showcase/releases/tag/v1.1.0)
+[下载 v1.1.5 Windows 便携版](https://github.com/Brand1on/ai-desensitizer-showcase/releases/tag/v1.1.5)
 
 下载 ZIP 后解压到普通文件夹，运行 `数据脱敏工具.exe`。程序不需要安装，Office 文件预览所需的 LibreOffice/PDF 运行时已包含在压缩包中。
 
 SHA-256：
 
 ```text
-B83C1A711A63FD0D92C1552A2A3AFAAD04E2F4B6944F88D7443CF16D469AF371
+3928FC6BFE219C754C10A1212D72B7D6DF36C4DFA8D261181475EEAD10EADDCC
 ```
 
 ## 数据边界
@@ -75,9 +75,11 @@ B83C1A711A63FD0D92C1552A2A3AFAAD04E2F4B6944F88D7443CF16D469AF371
 
 ## 项目状态
 
-当前公开版本状态：**v1.1.0**
+当前公开版本状态：**v1.1.5**
 
 - 正式版覆盖脱敏、加密传输和解密还原三类任务。
+- AI 复核可同时检查单位名称、业务组及其人员字段，并将选中建议稳定应用到当前任务。
+- 标准规则和自定义规则均可关闭，允许仅使用 AI 规则重新生成脱敏结果。
 - 历史任务以加密形式保存在工具目录内，可随便携目录迁移。
 - Windows 便携包已完成构建、哈希校验和发布前检查。
 
