@@ -1,9 +1,9 @@
-name: Publish v1.1.5
+name: Repack v1.1.5
 
 on:
   push:
     tags:
-      - v1.1.5
+      - v1.1.5-repack
 
 permissions:
   contents: write
@@ -15,7 +15,7 @@ jobs:
       - name: Download release payload
         uses: actions/checkout@v4
         with:
-          ref: release-assets-v1.1.5
+          ref: release-assets-v1.1.5-repack
           path: payload
           fetch-depth: 1
 
@@ -25,24 +25,18 @@ jobs:
           cat payload/parts/part-* > ai-desensitizer-v1.1.5-Windows-x64.zip
           sha256sum -c payload/ai-desensitizer-v1.1.5-Windows-x64.zip.sha256
 
-      - name: Create public release
+      - name: Replace public release assets
         env:
           GH_TOKEN: ${{ github.token }}
         shell: bash
         run: |
-          gh release create "$GITHUB_REF_NAME" \
+          gh release upload "v1.1.5" \
             ai-desensitizer-v1.1.5-Windows-x64.zip \
             payload/ai-desensitizer-v1.1.5-Windows-x64.zip.sha256 \
             --repo "$GITHUB_REPOSITORY" \
+            --clobber
+          gh release edit "v1.1.5" \
+            --repo "$GITHUB_REPOSITORY" \
             --title "数据脱敏工具 v1.1.5" \
             --notes-file payload/RELEASE_NOTES.md \
-            --verify-tag \
             --latest
-
-      - name: Remove temporary payload branch
-        env:
-          GH_TOKEN: ${{ github.token }}
-        shell: bash
-        run: |
-          git push "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" \
-            --delete release-assets-v1.1.5
